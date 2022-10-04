@@ -1,0 +1,35 @@
+{
+  "name": "btmk-cblk",
+  "description": "btmk code block extension for tiptap",
+  "version": "1.0.0",
+  "homepage": "https://docs.bitmark.cloud/",
+  "keywords": [
+    "tiptap",
+    "tiptap extension"
+  ],
+  "license": "MIT",
+  "main": "dist/tiptap-extension-code-block.cjs.js",
+  "umd": "dist/tiptap-extension-code-block.umd.js",
+  "module": "dist/tiptap-extension-code-block.esm.js",
+  "types": "dist/packages/extension-code-block/src/index.d.ts",
+  "files": [
+    "src",
+    "dist"
+  ],
+  "peerDependencies": {
+    "@tiptap/core": "^2.0.0-beta.133"
+  },
+  "dependencies": {
+    "prosemirror-state": "^1.4.1",
+    "prosemirror-view": "^1.22.0",
+    "prosemirror-model": "^1.16.1",
+    "prosemirror-utils": "^0.9.6",
+    "lowlight": "^2.4.1",
+    "@tiptap/extension-code-block": "2.0.0-beta.37"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/popovicititus/btktp-extsns",
+    "directory": "packages/btk-codeblock"
+  }
+}
