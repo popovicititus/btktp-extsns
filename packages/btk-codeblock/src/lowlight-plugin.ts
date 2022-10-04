@@ -30,6 +30,7 @@ function getHighlightNodes(result: any) {
   return result.value || result.children || [];
 }
 
+// @ts-ignore
 function getDecorations({
                           doc,
                           name,
@@ -47,7 +48,7 @@ function getDecorations({
         ? getHighlightNodes(lowlight.highlight(language, block.node.textContent))
         : getHighlightNodes(lowlight.highlightAuto(block.node.textContent));
 
-      parseNodes(nodes).forEach(node => {
+      parseNodes(nodes).forEach((node: any) => {
         const to = from + node.text.length;
 
         if (node.classes.length) {

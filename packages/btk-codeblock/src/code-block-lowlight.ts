@@ -41,14 +41,14 @@ export const BtmkCodeBlock = CodeBlock.extend<CodeBlockLowlightOptions>({
   addCommands() {
     return {
       ...this.parent?.(),
-      setCodeblockLanguage: (language) => ({commands}) => {
+      setCodeblockLanguage: (language: any) => ({commands} : any) => {
         return commands.updateAttributes('codeBlock', {
           codeLanguage: language,
           language: language,
           class: 'language-' + language
         });
       },
-      toggleCodeblockColoring: () => ({commands}) => {
+      toggleCodeblockColoring: () => ({commands} : any) => {
         const attrs = this.editor.getAttributes('codeBlock');
         if (attrs?.language !== 'plaintext') {
           return commands.updateAttributes('codeBlock', {language: 'plaintext', class: 'language-plaintext'});

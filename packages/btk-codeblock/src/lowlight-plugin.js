@@ -24,6 +24,7 @@ function getHighlightNodes(result) {
     // `.value` for lowlight v1, `.children` for lowlight v2
     return result.value || result.children || [];
 }
+// @ts-ignore
 function getDecorations({ doc, name, lowlight, defaultLanguage, }) {
     const decorations = [];
     findChildren(doc, node => node.type.name === name)
@@ -34,7 +35,7 @@ function getDecorations({ doc, name, lowlight, defaultLanguage, }) {
         const nodes = language && languages.includes(language)
             ? getHighlightNodes(lowlight.highlight(language, block.node.textContent))
             : getHighlightNodes(lowlight.highlightAuto(block.node.textContent));
-        parseNodes(nodes).forEach(node => {
+        parseNodes(nodes).forEach((node) => {
             const to = from + node.text.length;
             if (node.classes.length) {
                 const decoration = Decoration.inline(from, to, {

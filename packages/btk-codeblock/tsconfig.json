@@ -10,6 +10,7 @@
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
+    "skipLibCheck": true,
     "sourceMap": true,
     "baseUrl": ".",
     "rootDir": ".",
