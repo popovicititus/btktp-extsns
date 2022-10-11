@@ -1,29 +1,39 @@
-import {Mark, mergeAttributes} from '@tiptap/core';
+import Image, {ImageOptions} from '@tiptap/extension-image';
 
-export interface MarkedOptions {
-  HTMLAttributes: Record<string, any>;
+export interface BitmarkImageOptions extends ImageOptions {
+  height: any;
+  width: any;
 }
 
-export const Highlight = Mark.create<MarkedOptions>({
-  name: 'highlight',
-
-  addOptions() {
+const BitmarkImage = Image.extend<BitmarkImageOptions>({
+  inline: false,
+  group: 'block',
+  addAttributes() {
     return {
-      HTMLAttributes: {
-        style: 'background-color: yellow'
+      ...this.parent?.(),
+      class: {
+        default: 'center',
+      },
+      height: {
+        default: null
+      },
+      width: {
+        default: null
+      }
+    };
+  },
+  addCommands() {
+    return {
+      ...this.parent?.(),
+      setImageAlignmentClass: (alignment: any) => ({commands} : any) => {
+        return commands.updateAttributes('image', {
+          class: alignment,
+          height: this.options.height,
+          width: this.options.width,
+        });
       },
     };
   },
-
-  parseHTML() {
-    return [
-      {
-        tag: 'mark',
-      },
-    ];
-  },
-
-  renderHTML({ HTMLAttributes }) {
-    return ['mark', mergeAttributes(this.options.HTMLAttributes, HTMLAttributes), 0];
-  }
 });
+
+export default BitmarkImage;
