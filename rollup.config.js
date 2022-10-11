@@ -26,6 +26,7 @@ async function build(commandLineArgs) {
 
     // Support --scope and --ignore globs if passed in via commandline
     const { scope, ignore } = minimist(process.argv.slice(2))
+    console.log('ignore: ', ignore, ', scope: ', scope);
     const packages = await getSortedPackages(scope, ignore)
 
     // prevent rollup warning
@@ -35,7 +36,9 @@ async function build(commandLineArgs) {
 
     packages.forEach(pkg => {
         const basePath = path.relative(__dirname, pkg.location)
+        console.log('base path: ', basePath);
         const input = path.join(basePath, 'src/index.ts')
+        console.log('input: ', input);
         const {
             name,
             main,
@@ -91,7 +94,7 @@ async function build(commandLineArgs) {
                         compilerOptions: {
                             declaration: true,
                             paths: {
-                                '@tiptap/*': ['packages/*/src'],
+                                '@titus.popovici/*': ['packages/*/src'],
                             },
                         },
                         include: fs.existsSync(`${basePath}/tsconfig.json`)

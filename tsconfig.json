@@ -16,7 +16,7 @@
     "allowJs": true,
     "checkJs": false,
     "paths": {
-      "@tiptap/*": ["packages/*/dist", "packages/*/src"]
+      "@titus.popovici/*": ["packages/*/dist", "packages/*/src"]
     },
     "lib": [
       "esnext",
