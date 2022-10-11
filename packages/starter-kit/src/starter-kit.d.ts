@@ -12,6 +12,8 @@ import { ListItemOptions } from '@tiptap/extension-list-item';
 import { OrderedListOptions } from '@tiptap/extension-ordered-list';
 import { ParagraphOptions } from '@tiptap/extension-paragraph';
 import { StrikeOptions } from '@tiptap/extension-strike';
+import { PlaceholderOptions } from "@tiptap/extension-placeholder";
+import { LinkOptions } from "@tiptap/extension-link";
 export interface StarterKitOptions {
     bold: Partial<BoldOptions> | false;
     bulletList: Partial<BulletListOptions> | false;
@@ -28,6 +30,10 @@ export interface StarterKitOptions {
     orderedList: Partial<OrderedListOptions> | false;
     paragraph: Partial<ParagraphOptions> | false;
     strike: Partial<StrikeOptions> | false;
+    link: Partial<LinkOptions> | false;
+    placeholder: Partial<PlaceholderOptions> | false;
+    taskitem: false;
+    tasklist: false;
     text: false;
 }
 export declare const StarterKit: Extension<StarterKitOptions, any>;

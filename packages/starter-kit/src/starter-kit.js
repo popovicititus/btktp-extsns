@@ -15,10 +15,14 @@ import { OrderedList } from '@tiptap/extension-ordered-list';
 import { Paragraph } from '@tiptap/extension-paragraph';
 import { Strike } from '@tiptap/extension-strike';
 import { Text } from '@tiptap/extension-text';
+import { Placeholder } from "@tiptap/extension-placeholder";
+import { Link } from "@tiptap/extension-link";
+import { TaskItem } from "@tiptap/extension-task-item";
+import { TaskList } from "@tiptap/extension-task-list";
 export const StarterKit = Extension.create({
     name: 'starterKit',
     addExtensions() {
-        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r;
+        var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l, _m, _o, _p, _q, _r, _s, _t, _u, _v, _w;
         const extensions = [];
         if (this.options.bold !== false) {
             extensions.push(Bold.configure((_a = this.options) === null || _a === void 0 ? void 0 : _a.bold));
@@ -67,6 +71,21 @@ export const StarterKit = Extension.create({
         }
         if (this.options.text !== false) {
             extensions.push(Text.configure((_r = this.options) === null || _r === void 0 ? void 0 : _r.text));
+        }
+        if (this.options.tasklist !== false) {
+            extensions.push(TaskList.configure((_s = this.options) === null || _s === void 0 ? void 0 : _s.tasklist));
+        }
+        if (this.options.taskitem !== false) {
+            extensions.push(TaskItem.configure((_t = this.options) === null || _t === void 0 ? void 0 : _t.taskitem));
+        }
+        if (this.options.link !== false) {
+            extensions.push(Link.configure((_u = this.options) === null || _u === void 0 ? void 0 : _u.link));
+        }
+        if (this.options.placeholder !== false) {
+            extensions.push(Placeholder.configure((_v = this.options) === null || _v === void 0 ? void 0 : _v.placeholder));
+        }
+        if (this.options.text !== false) {
+            extensions.push(Text.configure((_w = this.options) === null || _w === void 0 ? void 0 : _w.text));
         }
         return extensions;
     },

@@ -15,6 +15,10 @@ import { OrderedList, OrderedListOptions } from '@tiptap/extension-ordered-list'
 import { Paragraph, ParagraphOptions } from '@tiptap/extension-paragraph'
 import { Strike, StrikeOptions } from '@tiptap/extension-strike'
 import { Text } from '@tiptap/extension-text'
+import {Placeholder, PlaceholderOptions} from "@tiptap/extension-placeholder";
+import {Link, LinkOptions} from "@tiptap/extension-link";
+import {TaskItem} from "@tiptap/extension-task-item";
+import {TaskList} from "@tiptap/extension-task-list";
 
 export interface StarterKitOptions {
   bold: Partial<BoldOptions> | false,
@@ -32,6 +36,10 @@ export interface StarterKitOptions {
   orderedList: Partial<OrderedListOptions> | false,
   paragraph: Partial<ParagraphOptions> | false,
   strike: Partial<StrikeOptions> | false,
+  link: Partial<LinkOptions> | false,
+  placeholder: Partial<PlaceholderOptions> | false,
+  taskitem: false
+  tasklist: false
   text: false,
 }
 
@@ -99,6 +107,26 @@ export const StarterKit = Extension.create<StarterKitOptions>({
 
     if (this.options.strike !== false) {
       extensions.push(Strike.configure(this.options?.strike))
+    }
+
+    if (this.options.text !== false) {
+      extensions.push(Text.configure(this.options?.text))
+    }
+
+    if (this.options.tasklist !== false) {
+      extensions.push(TaskList.configure(this.options?.tasklist))
+    }
+
+    if (this.options.taskitem !== false) {
+      extensions.push(TaskItem.configure(this.options?.taskitem))
+    }
+
+    if (this.options.link !== false) {
+      extensions.push(Link.configure(this.options?.link))
+    }
+
+    if (this.options.placeholder !== false) {
+      extensions.push(Placeholder.configure(this.options?.placeholder))
     }
 
     if (this.options.text !== false) {

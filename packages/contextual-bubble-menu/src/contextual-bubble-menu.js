@@ -32,7 +32,8 @@ export class ContextualBubbleMenuView {
                 this.preventHide = false;
                 return;
             }
-            if ((event === null || event === void 0 ? void 0 : event.relatedTarget) && ((_a = this.element.parentNode) === null || _a === void 0 ? void 0 : _a.contains(event.relatedTarget))) {
+            if ((event === null || event === void 0 ? void 0 : event.relatedTarget)
+                && ((_a = this.element.parentNode) === null || _a === void 0 ? void 0 : _a.contains(event.relatedTarget))) {
                 return;
             }
             // this.hide();
