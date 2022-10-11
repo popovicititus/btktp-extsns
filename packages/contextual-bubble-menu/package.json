@@ -1,7 +1,7 @@
 {
   "name": "@titus.popovici/contextual-bubble-menu",
   "description": "btmk contextual bubble menu extension for tiptap",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "homepage": "https://docs.bitmark.cloud/",
   "keywords": [
     "tiptap",
