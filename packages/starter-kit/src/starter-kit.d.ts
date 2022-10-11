@@ -1,11 +1,9 @@
 import { Extension } from '@tiptap/core';
-import { BlockquoteOptions } from '@tiptap/extension-blockquote';
 import { BoldOptions } from '@tiptap/extension-bold';
 import { BulletListOptions } from '@tiptap/extension-bullet-list';
 import { CodeOptions } from '@tiptap/extension-code';
 import { CodeBlockOptions } from '@tiptap/extension-code-block';
 import { DropcursorOptions } from '@tiptap/extension-dropcursor';
-import { HardBreakOptions } from '@tiptap/extension-hard-break';
 import { HeadingOptions } from '@tiptap/extension-heading';
 import { HistoryOptions } from '@tiptap/extension-history';
 import { HorizontalRuleOptions } from '@tiptap/extension-horizontal-rule';
@@ -15,7 +13,6 @@ import { OrderedListOptions } from '@tiptap/extension-ordered-list';
 import { ParagraphOptions } from '@tiptap/extension-paragraph';
 import { StrikeOptions } from '@tiptap/extension-strike';
 export interface StarterKitOptions {
-    blockquote: Partial<BlockquoteOptions> | false;
     bold: Partial<BoldOptions> | false;
     bulletList: Partial<BulletListOptions> | false;
     code: Partial<CodeOptions> | false;
@@ -23,7 +20,6 @@ export interface StarterKitOptions {
     document: false;
     dropcursor: Partial<DropcursorOptions> | false;
     gapcursor: false;
-    hardBreak: Partial<HardBreakOptions> | false;
     heading: Partial<HeadingOptions> | false;
     history: Partial<HistoryOptions> | false;
     horizontalRule: Partial<HorizontalRuleOptions> | false;
