@@ -1,7 +1,7 @@
 {
   "name": "@titus.popovici/starter-kit",
   "description": "btmk code block extension for tiptap",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "homepage": "https://docs.bitmark.cloud/",
   "keywords": [
     "tiptap",
@@ -33,15 +33,19 @@
     "@tiptap/extension-history": "^2.0.0-beta.199",
     "@tiptap/extension-horizontal-rule": "^2.0.0-beta.199",
     "@tiptap/extension-italic": "^2.0.0-beta.199",
+    "@tiptap/extension-link": "^2.0.0-beta.199",
     "@tiptap/extension-list-item": "^2.0.0-beta.199",
     "@tiptap/extension-ordered-list": "^2.0.0-beta.199",
     "@tiptap/extension-paragraph": "^2.0.0-beta.199",
+    "@tiptap/extension-placeholder": "^2.0.0-beta.199",
     "@tiptap/extension-strike": "^2.0.0-beta.199",
+    "@tiptap/extension-task-item": "^2.0.0-beta.199",
+    "@tiptap/extension-task-list": "^2.0.0-beta.199",
     "@tiptap/extension-text": "^2.0.0-beta.199",
-    "@titus.popovici/codeblock": "^1.0.8",
-    "@titus.popovici/contextual-bubble-menu": "^1.0.8",
-    "@titus.popovici/highlight": "^1.0.8",
-    "@titus.popovici/image": "^1.0.8"
+    "@titus.popovici/codeblock": "^1.0.9",
+    "@titus.popovici/contextual-bubble-menu": "^1.0.9",
+    "@titus.popovici/highlight": "^1.0.9",
+    "@titus.popovici/image": "^1.0.9"
   },
   "repository": {
     "type": "git",
